@@ -1,0 +1,1208 @@
+@font-face{
+    font-family: 'Furore';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('../fonts/Furore.eot');
+    src: url('../fonts/Furore.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Furore.woff2') format('woff2'),
+    url('../fonts/Furore.woff') format('woff'),
+    url('../fonts/Furore.ttf') format('truetype'),
+    url('../fonts/Furore.svg#Furore') format('svg');
+}
+
+@font-face {
+    font-family: 'ProximaNova';
+    src: url('../fonts/ProximaNova.eot');
+    src: url('../fonts/ProximaNova.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/ProximaNova.woff2') format('woff2'),
+        url('../fonts/ProximaNova.woff') format('woff'),
+        url('../fonts/ProximaNova.ttf') format('truetype'),
+        url('../fonts/ProximaNova.svg#ProximaNova-RegularIt') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+body{
+    background: url(../img/bg.png) no-repeat;
+    background-size: cover;
+	color: #fff;
+    font-family: 'ProximaNova';
+    background-attachment: fixed;
+    background-position: center center;
+}
+
+a{
+    text-decoration: none;
+
+    color: #fff;
+}
+
+a:hover{
+    text-decoration: none;
+
+    color: #fff;
+    cursor: pointer;
+}
+
+input {
+	border-radius: 0;
+	outline:none;
+}
+
+header{
+	margin: 40px 0;
+}
+
+form{
+	width: 100%;
+	display: flex;
+}
+
+.auth-logo{
+	margin-top: 100px;
+	text-align: center;
+}
+
+.auth-logo img{
+	width: 300px;
+	height: auto;
+}
+
+.auth-btn{
+	height: 100px;
+	background: url(../img/autorise.svg) no-repeat;
+	margin-top: 40px;
+}
+
+.auth-btn:hover{
+	background: url(../img/autorise_active.svg) no-repeat;
+	cursor: pointer;
+}
+
+.auth-info{
+	display: flex;
+	justify-content: center;
+	font-size: 24px;
+	text-align: center;
+}
+.auth-info img{
+	width: 42px; 
+	height: 36px;
+	margin-left: 5px;
+}
+.logo{
+    height: 70px;
+
+    text-align: center;
+}
+
+.logo img{
+    width: auto;
+    height: 100%;
+}
+
+.left-btns{
+	display: flex;
+}
+
+.info{
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+
+    background: url(../img/info.svg) no-repeat;
+}
+
+.info:hover{
+    background: url(../img/info_active.svg) no-repeat;
+    cursor: pointer;
+}
+
+
+.back{
+    width: 70px;
+    height: 70px;
+
+    cursor: pointer;
+
+    background: url(../img/back_btn.svg) no-repeat;
+}
+
+.back:hover{
+    background: url(../img/back_btn_active.svg) no-repeat;
+    cursor: pointer;
+}
+
+.rigth-btns{
+    display: flex;
+
+    color: #fff;
+
+    justify-content: flex-end;
+}
+
+.coins{
+    font-family: 'Furore';
+    font-size: 25px;
+
+    display: flex;
+
+    height: 70px;
+    margin-right: 15px;
+
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.flexcoin{
+    width: 70px;
+    height: 70px;
+
+    background: url(../img/flexcoin.svg) no-repeat;
+}
+
+
+.mission{
+    height: 460px;
+
+    background: url(../img/mission.svg) no-repeat;
+    background-position: center;
+}
+
+.mission:hover{
+    background: url(../img/mission_active.svg) no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.game{
+    height: 138px;
+
+    background: url(../img/game.svg) no-repeat;
+    background-position: center;
+}
+
+.game:hover{
+    background: url(../img/game_active.svg) no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.sale {
+    font-family: 'Furore';
+    font-size: 11px;
+    padding: 5px;
+    position: absolute;
+    background-color: #e74c3c;
+}
+
+.best-game{
+    font-family: 'Furore';
+    font-size: 12px;
+
+    position: relative;
+    top: 35px;
+    left: 35px;
+    display: none;
+}
+
+.shop{
+    height: 183px;
+
+    background: url(../img/shop.svg) no-repeat;
+    background-position: center;
+}
+
+.shop:hover{
+    background: url(../img/shop_active.svg) no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+
+.fortune{
+    height: 115px;
+
+    background: url(../img/fortune.svg) no-repeat;
+    background-position: center;
+}
+
+.fortune:hover{
+    background: url(../img/fortune_active.svg) no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.fortune-time{
+    font-family: 'Furore';
+    font-size: 12px;
+
+    position: relative;
+    top: 15px;
+    right: 35px;
+
+    display: flex;
+
+    justify-content: flex-end;
+}
+
+.profile{
+    height: 115px;
+    margin-top: 25px;
+
+    background: url(../img/profile.svg) no-repeat;
+    background-position: center;
+}
+
+.profile:hover{
+    background: url(../img/profile_active.svg) no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.rating{
+    height: 105px;
+
+    background: url(../img/rating.svg) no-repeat;
+    background-position: center;
+}
+
+.rating:hover{
+    background: url(../img/rating_active.svg) no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.news{
+    height: 105px;
+
+    background: url(../img/news.svg) no-repeat;
+    background-position: center;
+}
+
+.news:hover{
+    background: url(../img/news_active.svg) no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.social{
+	height: 75px;
+	align-items: center;
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.inst{
+    width: 75px;
+    height: 75px;
+
+    background: url(../img/inst.svg) no-repeat;
+}
+
+.inst:hover{
+    background: url(../img/inst_active.svg) no-repeat;
+    cursor: pointer;
+}
+
+.vk{
+    width: 75px;
+    height: 75px;
+
+    background: url(../img/vk.svg) no-repeat;
+}
+
+.vk:hover{
+    background: url(../img/vk_active.svg) no-repeat;
+    cursor: pointer;
+}
+
+.chat{
+    width: 180px;
+    height: 80px;
+
+    background: url(../img/chat.svg) no-repeat;
+}
+
+.chat:hover{
+    background: url(../img/chat_active.svg) no-repeat;
+    cursor: pointer;
+}
+
+
+.overlay{
+    position: fixed;
+    z-index: 1000000;
+    top: 0;
+    left: 0;
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    width: 100%;
+    height: 0;
+
+    transition: .5s;
+
+    background-color: rgb(46,49,145);
+    background-color: rgba(46,49,145, 0.9);
+}
+
+.error{
+    position: fixed;
+    z-index: 1000000;
+    top: 0;
+    left: 0;
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    width: 100%;
+    height: 0%;
+
+    transition: .5s;
+
+    background-color: rgb(46,49,145);
+    background-color: rgba(46,49,145, 0.9);
+}
+
+.error-text{
+	width: 90%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.close-btn{
+    position: absolute;
+    top: 10%;
+    right: 20%;
+
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.close-btn:hover{
+	-webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    cursor: pointer;
+}
+
+.page-ttl{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    font-family: 'Furore';
+    font-size: 32px;
+    height: 70px;
+
+}
+
+.info-new{
+	display: flex;
+	justify-content: flex-start;
+	margin-left: 10px;
+}
+
+.ttl-new{
+	margin-left: 10px;
+}
+
+.news-block{
+	width: 100%;
+	border: 14px solid #0ff;
+	-o-border-image: url(../img/news_bg.svg) 14 round round;
+	   border-image: url(../img/news_bg.svg) 14 round round;
+	margin-bottom: 20px;
+}
+
+.new{
+	background: rgba(61, 56, 155, 0.85);
+	width: 100%;
+	height: 100%;
+	font-size: 14px;
+	padding: 10px 10px;
+}
+
+.photo{
+	width: 290px;
+	height: 255px;
+	overflow: hidden;
+	margin-top: 100px;
+	border: 14px solid #0ff;
+	-o-border-image: url(../img/photo.svg) 10 round round;
+	   border-image: url(../img/photo.svg) 10 round round;
+}
+
+.photo img{
+	width: 100%;
+	height: auto;
+}
+.profile-info{
+	height: 260px;
+	display: flex;
+  	flex-flow: column wrap;
+  	margin-top: 100px;
+}
+
+.name{
+	font-family: 'Furore';
+	font-size: 32px;
+}
+
+.rate-place{
+	font-size: 24px;
+}
+
+.rate-info{
+	color: #79CBC3;
+}
+
+.level{
+	width: 92%;
+	position: absolute;
+	bottom: 0;
+}
+
+.progress{
+	background-color: #040035;
+	height: 30px;
+	border-radius: 0;
+}
+
+.progress-bar{
+	background-color: none;
+	background: linear-gradient(to right, #06FBDB, #1B75BB);
+}
+
+.xp{
+	display: flex;
+	justify-content: flex-end;
+	color: #79CBC3;
+	font-size: 12px;
+	margin-top: 5px;
+}
+
+.send{
+	display: flex;
+	margin-top: 80px;
+	margin-bottom: 40px;
+}
+
+.code{
+	width: 60%;
+	border: none;
+	font-family: 'Furore';
+	font-size: 18px;
+	padding: 10px;
+}
+
+.send-btn{
+	font-size: 18px;
+	font-family: 'Furore';
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 40%;
+	height: 50px;
+	background: linear-gradient(to right, #E42573, #FFD015);
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	box-shadow: none;
+}
+
+.send-btn:hover{
+	background: linear-gradient(to right, #A10973, #FF6A15);
+    cursor: pointer;
+}
+
+.rating-page{
+	display: flex;
+	justify-content: center;
+	font-family: 'Furore';
+	margin: 20px 0;
+}
+
+.rating-page span{
+	margin: 0 10px;
+}
+
+.rate-project:hover, .rate-game:hover{
+	color: #95CAC2;
+	cursor: pointer;
+}
+
+.rate-btn{
+	height: 490px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.prev-btn{
+	width: 50px;
+	height: 50px;
+	background: url(../img/prev-btn.svg) no-repeat;
+}
+
+.next-btn{
+	width: 50px;
+	height: 50px;
+	background: url(../img/next-btn.svg) no-repeat;
+}
+
+.rating-block{
+	display: flex;
+	font-family: 'Furore';
+	margin: 10px 0;
+}
+
+.place{
+	width: 10%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 24px;
+}
+
+.user-img{
+	width: 85px;
+	height: 85px;
+	overflow: hidden;
+	border: 4px solid #0ff;
+	-o-border-image: url(../img/photo.svg) 4 round round;
+	   border-image: url(../img/photo.svg) 4 round round;
+}
+
+.user-img img{
+	width: 100%;
+	height: auto;
+}
+
+.user-img-border{
+	width: 100%;
+	height: 86px;
+	position: relative;
+	top: -124px;
+	z-index: 200;
+}
+
+.user-name{
+	width: 40%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	font-size: 24px;
+	margin-left: 20px;
+}
+
+.user-points{
+	width: 40%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	font-size: 24px;
+}
+
+.task-block{
+	width: 100%;
+	height: 318px;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	margin: 40px 0;
+	cursor: pointer;
+}
+
+.task-img{
+	width: 240px;
+	height: 316px;
+	position: relative;
+}
+
+.task-img img{
+	width: 100%;
+	border: 14px solid #0ff;
+	-o-border-image: url(../img/missionboard.svg) 16 round round;
+	   border-image: url(../img/missionboard.svg) 16 round round;
+}
+
+.task-wrapp{
+	width: 240px;
+	height: 316px;
+	position: absolute;
+}
+
+.task{
+	width: 213px;
+	/*height: 307px;*/
+	background: rgba(61, 56, 155, 0.85);
+	position: absolute;
+	bottom: 11px;
+	left: 13px;
+	height: 90px;
+	overflow: hidden;
+	transition: 1s;
+}
+
+
+
+.task-ttl{
+	font-family: 'Furore';
+	font-size: 14px;
+	margin-left: 5px;
+	padding: 5px;
+	display: flex;
+	align-items: center;
+	height: 100%;
+}
+
+.shop-ttl{
+	font-family: 'Furore';
+	font-size: 14px;
+	margin-left: 5px;
+	padding: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	transition: 1s;
+	text-align: center;
+}
+
+.info-project {
+	height: 100%;
+    display: flex;
+  	flex-flow: column wrap;
+  	justify-content: center;
+  	align-items: center;
+}
+
+.info-project p{
+	width: 60%;
+}
+
+.task-info{
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 5px;
+}
+
+.task-block:hover .task{
+	height: 291px;
+	cursor: pointer;
+}
+
+.task-block:hover .task-ttl{
+	height: 40px;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	margin-top: 15px;
+}
+
+.task-block:hover .shop-ttl{
+	height: 75px;
+	cursor: pointer;
+	margin-top: 50px;
+	margin-bottom: -50px;
+}
+
+
+.price{
+	position: absolute;
+	margin-left: 100px;
+	top: 40px;
+	font-family: 'Furore';
+	text-shadow: 1px 1px 2px black; 
+	padding: 10px 15px;
+	background: linear-gradient(to left, #E42573, #FFD015);
+	z-index: 10000;
+}
+
+.price-shop{
+	position: absolute;
+	margin-left: 25px;
+	top: 40px;
+	font-family: 'Furore';
+	text-shadow: 1px 1px 2px black; 
+	padding: 10px 15px;
+	background: linear-gradient(to left, #06FBDB, #1B75BB);
+	z-index: 10000;
+}
+
+.on-shop{
+	position: absolute;
+	margin-left: 100px;
+	top: 40px;
+	font-family: 'Furore';
+	text-shadow: 1px 1px 2px black; 
+	padding: 10px 15px;
+	background: linear-gradient(to left, #E42573, #FFD015);
+	z-index: 10000;
+
+}
+
+.buy-btn{
+	margin: auto auto;
+	margin-top: 60px;
+	width: 80%;
+	height: 100%;
+	background: url(../img/kupit.svg) no-repeat;
+}
+
+.fortune-number{
+	display: flex;
+	justify-content: center;
+}
+
+.random-number{
+	font-family: 'Furore';
+	font-size: 102px;
+}
+
+.btn-start{
+    background: rgba(61, 56, 155, 0.85);
+    width: 130px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Furore';
+
+    border: 14px solid #0ff;
+    -o-border-image: url(../img/photo.svg) 6 round round;
+    border-image: url(../img/photo.svg) 6 round round;
+    cursor: pointer;
+    margin-top: 200px;
+}
+
+.fortune-btn{
+    background: rgba(61, 56, 155, 0.85);
+    width: 130px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Furore';
+    outline: none;
+    color: #fff;
+
+    border: 14px solid #0ff;
+    -o-border-image: url(../img/photo.svg) 6 round round;
+    border-image: url(../img/photo.svg) 6 round round;
+    cursor: pointer;
+
+}
+
+.fortune-start, .fortune-start form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.fortune-start{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.submit-number{
+	display: flex;
+	justify-content: center;
+}
+
+
+
+@media screen and (max-height: 450px){
+    .closebtn
+    {
+        font-size: 40px;
+
+        top: 15px;
+        right: 35px;
+    }
+}
+.blur{
+    -webkit-filter: blur(5px);
+            filter: blur(5px);
+}
+.col-6{
+}
+
+@media (min-width: 320px) and (max-width: 576px) {
+	.auth-logo{
+		margin-top: 20px;
+	}
+
+	/*START_INDEX*/
+		.game{
+			display: none;
+		}
+		.best-game{
+			display: none;
+		}
+		.shop{
+			height: 130px;
+		}
+		.fortune{
+			height: 80px;
+		}
+		.fortune-time{
+			display: none;
+		}
+
+		.profile{
+			margin-top: 0px;
+			height: 100px;
+		}
+		.profile{
+			height: 100px;
+		}
+		.rating{
+			height: 90px;
+		}
+		.news{
+			height: 90px;
+		}
+		.social{
+			margin-bottom: 20px;
+		}
+		.inst{
+			width: 45px;
+			height: 45px;
+		}
+		.vk{
+			width: 45px;
+			height: 45px;
+		}
+		.chat{
+			width: 100px;
+			height: 45px;
+		}
+
+	/*END_INDEX*/
+	
+	/*START_HEADER*/
+
+	.info{
+	    width: 50px;
+	    height: 50px;
+	}
+	.back{
+	    width: 50px;
+	    height: 50px;
+	}
+	.coins{
+		height: 50px;
+	}
+	.flexcoin{
+	    width: 50px;
+	    height: 50px;
+	}
+	.left-btns{
+		margin-top: 20px;
+	}
+	.rigth-btns{
+		margin-top: 20px;
+	}
+
+	/*END_HEADER*/
+
+	/*START_PROFILE*/
+	.photo{
+		margin-top: 20px;
+	}
+
+	.profile-info{
+		height: 220px;
+	  	margin-top: 20px;
+	}
+	.send{
+		margin-top: 40px;
+	}
+	.send-btn{
+		width: 50%;
+	}
+	.code{
+		width: 50%;
+		font-size: 14px;
+	}
+	
+	/*END_PROFILE*/
+
+	/*START_NEWS*/
+
+	.news-block{
+		-o-border-image: url(../img/news_bg.svg) 8 round round;
+		   border-image: url(../img/news_bg.svg) 8 round round;
+	}
+	.info-new{
+		margin-left: 5px;
+	}
+
+	/*END_NEWS*/
+
+	/*START_RATING*/
+	.rating-page{
+		font-size: 14px;
+		margin: 0px;
+		margin-bottom: 20px;
+	}
+
+	.rating-page span{
+		margin: 0 5px;
+	}
+
+	.rate-btn{
+		height: 75px;
+		margin-bottom: 20px;
+	}
+
+	.place{
+		font-size: 12px;
+	}
+	.user-img{
+		width: 35px;
+		height: 35px;
+		overflow: hidden;
+		border: 4px solid #0ff;
+		-o-border-image: url(../img/photo.svg) 4 round round;
+		   border-image: url(../img/photo.svg) 4 round round;
+	}
+	.user-name{
+		font-size: 12px;
+	}
+	.user-points{
+		font-size: 12px;
+	}
+
+	/*END_RATING*/
+	
+	.btn-start{
+		margin-top: 50px;
+	}
+	.random-number{
+		font-size: 30px;
+	}
+
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+	/*START_INDEX*/
+		.game{
+			display: none;
+		}
+		.best-game{
+			display: none;
+		}
+		.shop{
+			height: 130px;
+		}
+		.fortune{
+			height: 80px;
+		}
+		.fortune-time{
+			display: none;
+		}
+
+		.profile{
+			margin-top: 0px;
+			height: 100px;
+		}
+		.profile{
+			height: 100px;
+		}
+		.rating{
+			height: 90px;
+		}
+		.news{
+			height: 90px;
+		}
+		.social{
+			margin-bottom: 20px;
+		}
+		.inst{
+			width: 45px;
+			height: 45px;
+		}
+		.vk{
+			width: 45px;
+			height: 45px;
+		}
+		.chat{
+			width: 100px;
+			height: 45px;
+		}
+
+	/*END_INDEX*/
+
+	/*START_PROFILE*/
+
+	.photo{
+		margin-top: 20px;
+	}
+	.profile-info{
+		height: 220px;
+	  	margin-top: 20px;
+	}
+	.send{
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
+	.send-btn{
+		width: 50%;
+	}
+	.code{
+		width: 50%;
+		font-size: 14px;
+	}
+	
+	/*END_PROFILE*/
+
+	/*START_RATING*/
+	.rating-page{
+		font-size: 14px;
+		margin: 0px;
+		margin-bottom: 20px;
+	}
+
+	.rating-page span{
+		margin: 0 5px;
+	}
+
+	.rate-btn{
+		height: 220px;
+		margin-bottom: 20px;
+	}
+
+	.place{
+		font-size: 12px;
+	}
+	.user-img{
+		width: 35px;
+		height: 35px;
+		overflow: hidden;
+		border: 4px solid #0ff;
+		-o-border-image: url(../img/photo.svg) 4 round round;
+		   border-image: url(../img/photo.svg) 4 round round;
+	}
+	.user-name{
+		font-size: 14px;
+	}
+	.user-points{
+		font-size: 14px;
+	}
+
+	/*END_RATING*/
+
+}
+
+@media (min-width: 769px) and (max-width: 960px) {
+	/*START_INDEX*/
+	.mission{
+		height: 350px;
+	}
+	.game{
+		height: 100px;
+	}
+	.best-game{
+		display: none;
+	}
+	.shop{
+		height: 165px;
+	}
+	.fortune{
+		height: 80px;
+	}
+	.fortune-time{
+		display: none;
+	}
+	.profile{
+		margin-top: 5px;
+		height: 100px;
+	}
+	.rating{
+		height: 90px;
+	}
+	.news{
+		height: 80px;
+	}
+	.social{
+		margin-bottom: 20px;
+	}
+	.inst{
+		width: 35px;
+		height: 35px;
+	}
+	.vk{
+		width: 35px;
+		height: 35px;
+	}
+	.chat{
+		width: 100px;
+		height: 45px;
+	}
+
+	/*END_INDEX*/
+}
+
+@media (min-width: 451px) and (max-width: 576px) {
+	.news-block{
+		-o-border-image: url(../img/news_bg.svg) 10 round round;
+		   border-image: url(../img/news_bg.svg) 10 round round;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	.task-wrapp{
+		height: 280px;
+	}
+	.task{
+		width: 182px;
+		bottom: 16px;
+		left: 29px;
+	}
+
+	.task-block:hover .task{
+		height: 250px;
+    	cursor: pointer;
+	}
+}
+
+.info-project {
+		height: 100%;
+	    display: flex;
+	  	justify-content: center;
+	  	align-items: center;
+	}
+
+	.info-project p{
+		width: 60%;
+	}
+
+
+@media (min-width: 320px) and (max-width: 580px) {
+	.close-btn{
+	    position: absolute;
+	    top: 5%;
+	    right: 10%;
+
+	    width: 40px;
+	    height: 40px;
+
+	    cursor: pointer;
+	}
+	.info-project p{
+		font-size: 10px;
+	}
+}

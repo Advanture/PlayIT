@@ -1,0 +1,55 @@
+<?php
+
+namespace App\Services;
+
+
+use App\Events\CoinsAdded;
+use App\Models\Task;
+use Illuminate\Contracts\Auth\Authenticatable;
+
+class GameService
+{
+    /**
+     * @param Authenticatable $user
+     * @param int $points
+     */
+    public function taskComplete(Authenticatable $user, int $points): void
+    {
+        $task = $this->getTaskByCoins($points);
+
+        if ($task) {
+            if (! $user->tasks->contains($task)) {
+                $user->tasks()->attach($task);
+                event(new CoinsAdded($user, $task->coins));
+            }
+        }
+
+        if ($user->balance->max_points < $points) {
+            $user->balance->update(['max_points' => $points]);
+        }
+    }
+
+    /**
+     * @param int $points
+     * @return Task|null
+     */
+    private function getTaskByCoins(int $points): ?Task
+    {
+        switch ($points) {
+            case $points >= 2000:
+                return Task::find(202);
+                break;
+
+            case $points >= 1000:
+                return Task::find(201);
+                break;
+
+            case $points >= 500:
+                return Task::find(200);
+                break;
+
+            default:
+                return null;
+        }
+    }
+}

@@ -1,0 +1,9 @@
+@font-face {
+  src: url('../Fonts/Swiss.ttf') format('truetype');
+	font-family: "Swiss Siena [RUS by Daymarius]";
+  color:white;
+}
+
+canvas {
+    margin: 20px auto !important;
+}
