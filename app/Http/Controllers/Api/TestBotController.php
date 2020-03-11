@@ -6,6 +6,7 @@ use App\Events\CoinsAdded;
 use App\Http\Requests\TestBotRequest;
 use App\Models\Task;
 use App\Models\User;
+use App\Services\AchievementService;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -34,7 +35,7 @@ class TestBotController extends Controller
         return response()->json();
     }
 
-    public function userWinsClicker($request): JsonResponse
+    public function userWinsClicker($request, AchievementService $achievementService): JsonResponse
     {
         $ids = $request->ids;
         foreach ($ids as $id){
@@ -45,6 +46,7 @@ class TestBotController extends Controller
             }
 
             event(new CoinsAdded($user, 300, "Участие в Кликере"));
+            $achievementService->getClickerAchievement($user);
         }
     }
 }

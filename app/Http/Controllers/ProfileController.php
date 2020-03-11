@@ -10,6 +10,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use App\Services\AchievementService;
 
 class ProfileController extends Controller
 {
@@ -48,5 +49,12 @@ class ProfileController extends Controller
         return response()->json(
             UserCoinsHistory::where('user_id', $authUser->id)->get()
         );
+    }
+
+    public function test(AchievementService $achievementService)
+    {
+        $authUser = auth()->user();
+
+        return $achievementService->getAllARTasksAchievement($authUser);
     }
 }

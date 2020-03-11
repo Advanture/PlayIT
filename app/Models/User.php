@@ -88,4 +88,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(UserCoinsHistory::class, 'user_id');
     }
+
+    public function achievements(): BelongsToMany
+    {
+        return $this->belongsToMany(Achievement::class);
+    }
 }

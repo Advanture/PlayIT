@@ -13,7 +13,7 @@ class TaskController extends Controller
      */
     public function index(): JsonResponse
     {
-        $tasks = Task::all();
+        $tasks = Task::all()->where('type', '<>', 5);
 
         return response()->json($tasks);
     }

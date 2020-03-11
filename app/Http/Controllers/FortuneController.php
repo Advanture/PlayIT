@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Events\CoinsAdded;
+use App\Services\AchievementService;
 use App\Services\FortuneService;
 use Carbon\Carbon;
 use Illuminate\Http\RedirectResponse;
@@ -30,22 +31,27 @@ class FortuneController extends Controller
 
     /**
      * @param FortuneService $fortuneService
+     * @param AchievementService $achievementService
      * @return RedirectResponse|View
      */
-    public function start(FortuneService $fortuneService)
+    public function start(FortuneService $fortuneService, AchievementService $achievementService)
     {
         if (! $fortuneService->checkTime(auth()->user()))
-            return redirect()->back();
+            return response()->json(['fortune_time' => $fortuneService->getLeftTime(auth()->user())]);
 
         $randomValue = rand(1, 99);
         $canFortune = true;
 
-        event(new CoinsAdded(auth()->user(), $randomValue));
+        event(new CoinsAdded(auth()->user(), $randomValue, 'Колесо Фортуны'));
         auth()->user()->update([
             'last_fortune' => now()
         ]);
 
-        return view('fort', compact('randomValue', 'canFortune'));
+        $achievementService->getFortuneAchievement(auth()->user(), $randomValue);
+
+        return response()->json([
+            'fortune' => $randomValue
+        ]);
     }
 
     /**

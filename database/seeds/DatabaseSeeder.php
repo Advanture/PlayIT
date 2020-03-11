@@ -27,7 +27,8 @@ class DatabaseSeeder extends Seeder
             ReferralTableSeeder::class,
             PermissionsTableSeeder::class,
             ProductTableSeeder::class,
-            NewsTableSeeder::class
+            NewsTableSeeder::class,
+            AchievementTableSeeder::class,
         ]);
     }
 

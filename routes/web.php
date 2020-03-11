@@ -24,8 +24,8 @@ Route::group(['middleware' => 'auth:api'], function () {
         'as'        => 'fortune.'
     ], function () {
         Route::get('/', 'FortuneController@index')->name('index');
-        Route::post('start', 'FortuneController@start')->name('start');
-        Route::get('start', 'FortuneController@startRedirect')->name('start.redirect');
+        Route::get('start', 'FortuneController@start')->name('start');
+        //Route::get('start', 'FortuneController@startRedirect')->name('start.redirect');
     });
 
     Route::group([
@@ -39,6 +39,7 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::get('news', 'NewsController@index')->name('news');
 
     Route::get('profile', 'ProfileController@index')->name('profile');
+    Route::get('profile/test', 'ProfileController@test')->name('profile');
     Route::post('promocode', 'ProfileController@promocode')->name('promocode.use');
 
     Route::get('rating', 'RatingController@index')->name('rating');
