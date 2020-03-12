@@ -21,6 +21,7 @@ $factory->define(User::class, function (Faker $faker) {
         'vk_id' => $faker->numerify('########'),
         'first_name' => $faker->firstName,
         'last_name' => $faker->lastName,
-        'avatar_url' => $faker->imageUrl()
+        'avatar_url' => $faker->imageUrl(),
+        'app_token' => strtoupper(Str::random(8)),
     ];
 });

@@ -21,11 +21,12 @@ class CreateUsersTable extends Migration
             $table->string('last_name');
             $table->boolean('is_banned')->default(false);
             $table->unsignedBigInteger('rank_id')->default(1);
-            $table->rememberToken();
             $table->timestamp('last_fortune')->default(now()->subDay());
             $table->string('api_token', 80)
                 ->unique()
                 ->nullable();
+            $table->string('app_token', 8)
+                ->unique();
             $table->timestamps();
             $table->tinyInteger('body')->default(0);
             $table->tinyInteger('shirt')->default(0);

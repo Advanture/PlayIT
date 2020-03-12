@@ -23,7 +23,7 @@ class ProfileController extends Controller
         $rating = $userService->getRatingStats(auth()->user());
 
         return response()->json([
-            'user' => auth()->user(),
+            'user' => auth()->user()->load('achievements'),
             'rating' => $rating
         ],201);
     }

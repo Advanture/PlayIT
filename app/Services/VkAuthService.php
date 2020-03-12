@@ -44,7 +44,8 @@ class VkAuthService
                 $user = User::create([
                     'vk_id' => $userData['id'],
                     'first_name' => $userData['first_name'],
-                    'last_name' => $userData['last_name']
+                    'last_name' => $userData['last_name'],
+                    'app_token' => strtoupper(Str::random(8)),
                 ]);
 
                 UserBalance::create([

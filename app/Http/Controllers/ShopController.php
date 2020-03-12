@@ -40,6 +40,6 @@ class ShopController extends Controller
             return response()->json(['message' => 'Успешная покупка!']);
         }
 
-        return response()->json(['message' => 'Ошибка! Недостаточно средств!'], );
+        return response()->json(['message' => 'Ошибка! Недостаточно средств!']);
     }
 }

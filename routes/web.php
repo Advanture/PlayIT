@@ -48,7 +48,8 @@ Route::group(['middleware' => 'auth:api'], function () {
 
     Route::get('/', 'HomeController@index')->name('home');
 
-    Route::resource('tasks', 'TaskController');
+    Route::get('tasks', 'TaskController@index');
+    Route::get('special-tasks', 'TaskController@special');
 
     Route::get('history', 'ProfileController@coinsHistory');
 

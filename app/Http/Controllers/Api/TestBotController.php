@@ -35,9 +35,9 @@ class TestBotController extends Controller
         return response()->json();
     }
 
-    public function userWinsClicker($request, AchievementService $achievementService): JsonResponse
+    public function userWinsClicker(Request $request, AchievementService $achievementService): JsonResponse
     {
-        $ids = $request->ids;
+        $ids = $request['ids'];
         foreach ($ids as $id){
             try {
                 $user = User::where('vk_id', $id)->firstOrFail();
@@ -48,5 +48,19 @@ class TestBotController extends Controller
             event(new CoinsAdded($user, 300, "Участие в Кликере"));
             $achievementService->getClickerAchievement($user);
         }
+
+        return response()->json();
+    }
+
+    public function getIdByAppToken(Request $request): JsonResponse
+    {
+        $token = $request['token'];
+        try{
+            $user = User::where('app_token', $token)->firstOrFail();
+        } catch (ModelNotFoundException $exception) {
+            return response()->json($exception);
+        }
+
+        return response()->json($user->vk_id);
     }
 }
