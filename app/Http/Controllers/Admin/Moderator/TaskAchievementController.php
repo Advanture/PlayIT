@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin\Moderator;
 use App\Events\CoinsAdded;
 use App\Models\Task;
 use App\Models\User;
+use App\Services\AchievementService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -14,9 +15,10 @@ class TaskAchievementController extends Controller
 {
     /**
      * @param Request $request
+     * @param AchievementService $achievementService
      * @return RedirectResponse
      */
-    public function achievement(Request $request): RedirectResponse
+    public function achievement(Request $request, AchievementService $achievementService): RedirectResponse
     {
         $user = User::findOrFail($request->userId);
         $task = Task::findOrFail($request->taskId);

@@ -48,5 +48,6 @@ return [
         'client_secret' => env('VKONTAKTE_SECRET'),
         'redirect' => env('VKONTAKTE_REDIRECT_URI')
     ],
-    'testbot_private_key' => env('TESTBOT_PRIVATE_KEY')
+    'testbot_private_key' => env('TESTBOT_PRIVATE_KEY'),
+    'ar_private_key' => env('AR_PRIVATE_KEY')
 ];

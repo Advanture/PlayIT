@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->unsignedInteger('in_stock');
             $table->string('img_url');
+            $table->unsignedInteger('required_rank');
             $table->timestamps();
         });
     }

@@ -6,6 +6,7 @@ use App\Events\CoinsAdded;
 use App\Services\AchievementService;
 use App\Services\FortuneService;
 use Carbon\Carbon;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
@@ -13,9 +14,9 @@ class FortuneController extends Controller
 {
     /**
      * @param FortuneService $fortuneService
-     * @return View
+     * @return JsonResponse
      */
-    public function index(FortuneService $fortuneService): View
+    public function index(FortuneService $fortuneService): JsonResponse
     {
         $canFortune = $fortuneService->checkTime(auth()->user());
 
@@ -26,7 +27,9 @@ class FortuneController extends Controller
 
         $fortuneTime = Carbon::parse($fortuneTime)->format('H.i.s');
 
-        return view('fort', compact('canFortune', 'fortuneTime'));
+        return response()->json([
+            'time' => $fortuneTime
+        ]);
     }
 
     /**

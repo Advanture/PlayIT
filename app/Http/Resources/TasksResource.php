@@ -19,7 +19,7 @@ class TasksResource extends JsonResource
             'id' => $this->id,
             'title' => $this->title,
             'description' => $this->description,
-            'img_uri' => $this->img_url,
+            'img_uri' => $this->img_uri,
             'coins' => $this->coins,
             'type' => $this->type,
             'completed' => $this->when(auth()->user()->tasks->contains(Task::find($this->id)), true, false),

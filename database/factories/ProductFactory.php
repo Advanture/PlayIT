@@ -7,6 +7,7 @@ $factory->define(\App\Models\Product::class, function (Faker $faker) {
         'price' => rand(1, 1200),
         'name' => $faker->name,
         'in_stock' => rand(1, 200),
-        'img_url' => $faker->imageUrl()
+        'img_url' => $faker->imageUrl(),
+        'required_rank' => rand(1,3),
     ];
 });

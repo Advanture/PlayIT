@@ -5,10 +5,18 @@ namespace App\Listeners;
 use App\Events\CoinsAdded;
 use App\Models\UserBalance;
 use App\Models\UserCoinsHistory;
+use App\Services\AchievementService;
 use Illuminate\Support\Facades\DB;
 
 class UserCoinsAdd
 {
+    public $achievementService;
+
+    public function __construct(AchievementService $achievementService)
+    {
+        $this->achievementService = $achievementService;
+    }
+
     /**
      * Handle the event.
      *
@@ -30,6 +38,8 @@ class UserCoinsAdd
             'current_coins' => $updatedCoins,
             'max_coins' => $maxCoins
         ]);
+
+        $this->achievementService->getAchievementByTasksCount($event->user);
 
         UserCoinsHistory::create([
             'user_id' => $event->user->id,

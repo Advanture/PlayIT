@@ -37,9 +37,9 @@ class VkAuthController extends Controller
         try {
             $user = Socialite::driver('vkontakte')->stateless()->user();
         } catch (InvalidStateException $e) {  // If returned data is invalid
-            return redirect()->home();
+            return redirect(env('FRONTEND_URL'));
         } catch (ClientException $e) { // If access denied
-            return redirect()->home();
+            return redirect(env('FRONTEND_URL'));
         }
 
         $authUser = $vkAuthService->authFromVK($user->user);

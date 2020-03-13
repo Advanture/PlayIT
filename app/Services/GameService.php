@@ -37,15 +37,15 @@ class GameService
     {
         switch ($points) {
             case $points >= 2000:
-                return Task::find(202);
+                return Task::find(602);
                 break;
 
             case $points >= 1000:
-                return Task::find(201);
+                return Task::find(601);
                 break;
 
             case $points >= 500:
-                return Task::find(200);
+                return Task::find(600);
                 break;
 
             default:

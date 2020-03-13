@@ -26,6 +26,6 @@ class UserTaskComplete
 
         $user->tasks()->attach($task);
 
-        event(new CoinsAdded($user, $task->coins));
+        event(new CoinsAdded($user, $task->coins, "Активация промокода"));
     }
 }

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class TestBotRequest extends FormRequest
+class CompleteTaskRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -15,7 +15,7 @@ class TestBotRequest extends FormRequest
     {
         return (
             $this->request->has('_key') &&
-            $this->request->get('_key') === config('services.testbot_private_key')
+            $this->request->get('_key') === config('services.ar_private_key')
         );
     }
 
@@ -28,8 +28,7 @@ class TestBotRequest extends FormRequest
     {
         return [
             'vk_id' => 'required',
-            'success' => 'required|numeric',
-            'task' => 'required|in:300,301'
+            'task' => 'required|in:1,2'
         ];
     }
 }

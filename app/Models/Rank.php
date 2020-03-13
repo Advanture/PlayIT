@@ -26,4 +26,9 @@ class Rank extends Model
     {
         return $this->HasMany(User::class);
     }
+
+    public function products(): HasMany
+    {
+        return $this->hasMany(Product::class, 'required_rank');
+    }
 }

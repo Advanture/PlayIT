@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PromocodeUseRequest;
+use App\Models\User;
 use App\Models\UserCoinsHistory;
 use App\Services\PromocodeService;
 use App\Services\UserService;
@@ -31,15 +32,15 @@ class ProfileController extends Controller
     /**
      * @param PromocodeUseRequest $request
      * @param PromocodeService $promocodeService
-     * @return RedirectResponse
+     * @return JsonResponse
      */
-    public function promocode(PromocodeUseRequest $request, PromocodeService $promocodeService): RedirectResponse
+    public function promocode(PromocodeUseRequest $request, PromocodeService $promocodeService): JsonResponse
     {
         $code = $request->code;
 
         $status = $promocodeService->usePromocode($code, auth()->user());
 
-        return redirect()->back(); // TODO: Change that
+        return response()->json(['message' => 'Успешная активация!']);
     }
 
     public function coinsHistory(Request $request): JsonResponse
@@ -51,10 +52,13 @@ class ProfileController extends Controller
         );
     }
 
-    public function test(AchievementService $achievementService)
+    public function visit(User $user, UserService $userService)
     {
-        $authUser = auth()->user();
+        $rating = $userService->getRatingStats($user);
 
-        return $achievementService->getAllARTasksAchievement($authUser);
+        return response()->json([
+            'user' => $user->load('balance', 'rank', 'achievements'),
+            'rating' => $rating,
+        ]);
     }
 }

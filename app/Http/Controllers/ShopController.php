@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ProductResource;
 use App\Models\Product;
 use App\Services\OrderService;
 use Illuminate\Database\Eloquent\Builder;
@@ -24,22 +25,22 @@ class ShopController extends Controller
             })
             ->get();
 
-        return response()->json($products);
+        return response()->json(ProductResource::collection($products));
     }
 
     /**
      * @param Product $product
      * @param OrderService $orderService
-     * @return RedirectResponse
+     * @return JsonResponse
      */
     public function buy(Product $product, OrderService $orderService): JsonResponse
     {
-        if (auth()->user()->balance->current_coins >= $product->price){
+        if (auth()->user()->balance->current_coins >= $product->price && auth()->user()->rank->id > $product->rank->id){
             $orderService->make(auth()->user(), $product);
 
-            return response()->json(['message' => 'Успешная покупка!']);
+            return response()->json(['message' => 'Успешная покупка!'], 200);
         }
 
-        return response()->json(['message' => 'Ошибка! Недостаточно средств!']);
+        return response()->json(['message' => 'Ошибка!'], 400);
     }
 }
