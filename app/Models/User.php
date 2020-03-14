@@ -21,7 +21,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'vk_id', 'first_name', 'last_name', 'avatar_url', 'rank_id', 'is_banned', 'last_fortune', 'api_token', 'app_token'
+        'vk_id', 'first_name', 'last_name', 'avatar_url', 'rank_id', 'is_banned', 'last_fortune', 'api_token', 'app_token', 'body', 'shirt', 'pants', 'hair', 'eyes', 'hat',
     ];
 
     /**
@@ -30,7 +30,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'remember_token', 'api_token'
+        'remember_token', 'api_token', 'app_token'
     ];
 
     /**

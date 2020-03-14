@@ -34,6 +34,7 @@ class CreateUsersTable extends Migration
             $table->tinyInteger('hair')->default(0);
             $table->tinyInteger('eyes')->default(0);
             $table->tinyInteger('hat')->default(0);
+            $table->boolean('corona')->default(false);
         });
     }
 

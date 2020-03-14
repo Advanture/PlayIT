@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CharacterCreateRequest;
 use App\Http\Requests\PromocodeUseRequest;
 use App\Models\User;
 use App\Models\UserCoinsHistory;
@@ -10,14 +11,13 @@ use App\Services\UserService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\View\View;
 use App\Services\AchievementService;
 
 class ProfileController extends Controller
 {
     /**
      * @param UserService $userService
-     * @return View
+     * @return JsonResponse
      */
     public function index(UserService $userService): JsonResponse
     {
@@ -60,5 +60,32 @@ class ProfileController extends Controller
             'user' => $user->load('balance', 'rank', 'achievements'),
             'rating' => $rating,
         ]);
+    }
+
+    public function characterCreate(CharacterCreateRequest $request): JsonResponse
+    {
+        $authUser = auth()->user();
+
+        if(
+            $authUser->body != 0 ||
+            $authUser->shirt != 0 ||
+            $authUser->pants != 0 ||
+            $authUser->hair != 0 ||
+            $authUser->eyes != 0 ||
+            $authUser->hat != 0
+        ){
+            return response()->json(['message' => 'Ошибка! Вы уже обновляли внешний вид персонажа!']);
+        }
+
+        $authUser->update([
+            'body' => $request->body,
+            'shirt' => $request->shirt,
+            'pants' => $request->pants,
+            'hair' => $request->hair,
+            'eyes' => $request->eyes,
+            'hat' => $request->hat,
+        ]);
+
+        return response()->json(['message' => 'Успешное обновление внешности!'], 201);
     }
 }
