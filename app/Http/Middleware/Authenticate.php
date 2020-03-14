@@ -15,7 +15,7 @@ class Authenticate extends Middleware
     protected function redirectTo($request)
     {
         if (! $request->expectsJson()) {
-            return redirect('http://localhost:5000');
+            return response()->json('bad request', 400);
         }
     }
 }
