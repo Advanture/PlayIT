@@ -32,7 +32,7 @@ class VkAuthController extends Controller
     public function handleProviderCallback(
         VkAuthService $vkAuthService,
         VkUserService $vkUserService
-    ): JsonResponse
+    )
     {
         try {
             $user = Socialite::driver('vkontakte')->stateless()->user();
