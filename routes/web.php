@@ -13,9 +13,9 @@ Route::group(['prefix' => 'auth'], function () {
 });
 
 # For guests
-Route::group(['middleware' => 'guest'], function () {
-    Route::view('welcome', 'welcome')->name('welcome');
-});
+//Route::group(['middleware' => 'guest'], function () {
+//    Route::view('welcome', 'welcome')->name('welcome');
+//});
 
 # For authorized users
 Route::group(['middleware' => 'auth:api'], function () {
