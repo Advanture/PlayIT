@@ -13,7 +13,7 @@ Route::group(['prefix' => 'auth'], function () {
     Route::get('vk/callback-a', 'VkAuthController@handleProviderCallbackAdmin')
         ->name('auth.vk.callback.adm');
 
-    Route::post('logout', 'VkAuthController@logout')->name('logout');
+    Route::get('logout', 'VkAuthController@logout')->name('logout')->middleware('auth:api');
 });
 
 # For guests

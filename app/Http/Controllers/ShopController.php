@@ -25,6 +25,8 @@ class ShopController extends Controller
             })
             ->get();
 
+        if(auth()->user()->corona != true) $products->forget(9);
+
         return response()->json(ProductResource::collection($products));
     }
 

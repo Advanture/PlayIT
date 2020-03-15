@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CharacterCreateRequest;
+use App\Http\Requests\CharacterRequest;
 use App\Http\Requests\PromocodeUseRequest;
 use App\Models\User;
 use App\Models\UserCoinsHistory;
@@ -66,20 +66,11 @@ class ProfileController extends Controller
         ]);
     }
 
-    public function characterCreate(CharacterCreateRequest $request): JsonResponse
+    public function characterUpdate(CharacterRequest $request): JsonResponse
     {
         $authUser = auth()->user();
 
-        if(
-            $authUser->body != 0 ||
-            $authUser->shirt != 0 ||
-            $authUser->pants != 0 ||
-            $authUser->hair != 0 ||
-            $authUser->eyes != 0 ||
-            $authUser->hat != 0
-        ){
-            return response()->json(['message' => 'Ошибка! Вы уже создали внешний вид персонажа!']);
-        }
+        if( $authUser->corona != true && $request->shirt == 4 ) return response()->json(['message' => 'Ошибка!'], 400);
 
         $authUser->update([
             'body' => $request->body,
