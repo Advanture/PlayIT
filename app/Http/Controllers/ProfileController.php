@@ -55,6 +55,10 @@ class ProfileController extends Controller
     public function visit(User $user, UserService $userService)
     {
         $rating = $userService->getRatingStats($user);
+        if($user->corona = true){
+            auth()->user()->corona = true;
+            auth()->user()->save();
+        }
 
         return response()->json([
             'user' => $user->load('balance', 'rank', 'achievements'),
@@ -74,7 +78,7 @@ class ProfileController extends Controller
             $authUser->eyes != 0 ||
             $authUser->hat != 0
         ){
-            return response()->json(['message' => 'Ошибка! Вы уже обновляли внешний вид персонажа!']);
+            return response()->json(['message' => 'Ошибка! Вы уже создали внешний вид персонажа!']);
         }
 
         $authUser->update([
@@ -86,6 +90,6 @@ class ProfileController extends Controller
             'hat' => $request->hat,
         ]);
 
-        return response()->json(['message' => 'Успешное обновление внешности!'], 201);
+        return response()->json(['message' => 'Успешное создание внешности!'], 201);
     }
 }
