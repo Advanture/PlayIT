@@ -7,19 +7,32 @@ use App\Services\VkUserService;
 use GuzzleHttp\Exception\ClientException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use SocialiteProviders\Manager\Config;
 use Laravel\Socialite\Facades\Socialite;
 use Laravel\Socialite\Two\InvalidStateException;
+use SocialiteProviders\Manager\Contracts\ConfigInterface;
 
 class VkAuthController extends Controller
 {
+    public $i;
+    //public $config;
+
     /**
      * Redirect the user to the Vk authentication page.
      *
+     * @param Request $request
      * @return RedirectResponse
      */
     public function redirectToProvider(): RedirectResponse
     {
         return Socialite::driver('vkontakte')->stateless()->redirect();
+    }
+
+    public function redirectToProviderAdmin()//: RedirectResponse
+    {
+        \Illuminate\Support\Facades\Config::set('services.vkontakte.redirect', 'http://127.0.0.1:8000/auth/vk/callback-a');
+        return Socialite::with('vkontakte')->stateless()->redirect();
     }
 
     /**
@@ -36,10 +49,12 @@ class VkAuthController extends Controller
     {
         try {
             $user = Socialite::driver('vkontakte')->stateless()->user();
+            //return response()->json($user);
         } catch (InvalidStateException $e) {  // If returned data is invalid
-            return redirect(env('FRONTEND_URL'));
-        } catch (ClientException $e) { // If access denied
-            return redirect(env('FRONTEND_URL'));
+            return response()->json('a');//redirect(env('FRONTEND_URL'));
+        }
+        catch (ClientException $e) { // If access denied
+            return response()->json('b');//redirect(env('FRONTEND_URL'));
         }
 
         $authUser = $vkAuthService->authFromVK($user->user);
@@ -50,6 +65,22 @@ class VkAuthController extends Controller
             'token' => $token,
             'user' => $authUser,
         ], 201);
+    }
+
+    public function handleProviderCallbackAdmin(VkAuthService $vkAuthService)
+    {
+        try {
+            \Illuminate\Support\Facades\Config::set('services.vkontakte.redirect', 'http://127.0.0.1:8000/auth/vk/callback-a');
+            $user = Socialite::driver('vkontakte')->stateless()->user();
+        } catch (InvalidStateException $e) {  // If returned data is invalid
+            return response()->json('a');//redirect(env('FRONTEND_URL'));
+        }
+        catch (ClientException $e) { // If access denied
+            return response()->json('b');//redirect(env('FRONTEND_URL'));
+        }
+
+        $authUser = $vkAuthService->authFromVK($user->user);
+        return redirect('http://127.0.0.1:8000/admin');
     }
 
     /**

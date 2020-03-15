@@ -6,8 +6,12 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'auth'], function () {
     Route::get('vk', 'VkAuthController@redirectToProvider')
         ->name('auth.vk');
+    Route::get('vk-a', 'VkAuthController@redirectToProviderAdmin')
+        ->name('auth.vk.adm');
     Route::get('vk/callback', 'VkAuthController@handleProviderCallback')
         ->name('auth.vk.callback');
+    Route::get('vk/callback-a', 'VkAuthController@handleProviderCallbackAdmin')
+        ->name('auth.vk.callback.adm');
 
     Route::post('logout', 'VkAuthController@logout')->name('logout');
 });
@@ -18,7 +22,7 @@ Route::group(['prefix' => 'auth'], function () {
 //});
 
 # For authorized users
-Route::group(['middleware' => 'auth:api'], function () {
+Route::group(['middleware' => ['auth:api', 'api']], function () {
     Route::group([
         'prefix'    => 'fortune',
         'as'        => 'fortune.'
