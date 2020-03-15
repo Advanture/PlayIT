@@ -20,6 +20,7 @@ class CreateTasksTable extends Migration
             $table->unsignedInteger('coins');
             $table->string('img_uri');
             $table->smallInteger('type');
+            $table->boolean('hidden')->default(false);
             $table->timestamps();
         });
     }

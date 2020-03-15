@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\SpecialTasksResource;
 use App\Http\Resources\TasksResource;
 use App\Models\Task;
 use Illuminate\Http\JsonResponse;
@@ -14,14 +15,14 @@ class TaskController extends Controller
      */
     public function index(): JsonResponse
     {
-        $tasks = TasksResource::collection(Task::all()->where('type', '<>', 5));
+        $tasks = TasksResource::collection(Task::all()->where('type', '<>', 5)->where('hidden', false));
 
         return response()->json($tasks);
     }
 
     public function special(): JsonResponse
     {
-        $tasks = TasksResource::collection(Task::all()->where('type' , 5));
+        $tasks = SpecialTasksResource::collection(Task::all()->where('type' , 5)->where('hidden', false));
 
         return response()->json($tasks);
     }

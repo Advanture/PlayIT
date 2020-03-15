@@ -17,7 +17,7 @@ class CheckUserBannedStatus
     {
         if (auth()->check() && (! request()->routeIs('logout'))) {
             if (auth()->user()->is_banned)
-                return response(view('banned'), 403);
+                return response()->json(['message' => 'Вы заблокированы.'],403);
         }
 
         return $next($request);

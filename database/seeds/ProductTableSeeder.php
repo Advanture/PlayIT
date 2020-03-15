@@ -23,21 +23,21 @@ class ProductTableSeeder extends Seeder
             'name' => "Стикерпак",
             'in_stock' => 40,
             'img_url' => env('FRONTEND_URL'),
-            'required_rank' => 1,
+            'required_rank' => 3,
         ]);
         \App\Models\Product::create([
             'price' => 1000,
             'name' => "Силиконовый браслет \"Я все текста пишу шрифтом TimesNewRoman\"",
             'in_stock' => 50,
             'img_url' => env('FRONTEND_URL'),
-            'required_rank' => 1,
+            'required_rank' => 3,
         ]);
         \App\Models\Product::create([
             'price' => 1000,
             'name' => "Силиконовый браслет \"Самый мощный микроробот\"",
             'in_stock' => 50,
             'img_url' => env('FRONTEND_URL'),
-            'required_rank' => 1,
+            'required_rank' => 3,
         ]);
         \App\Models\Product::create([
             'price' => 800,
@@ -72,7 +72,7 @@ class ProductTableSeeder extends Seeder
             'name' => "Бомбер ИСиТ",
             'in_stock' => 3,
             'img_url' => env('FRONTEND_URL'),
-            'required_rank' => 1,
+            'required_rank' => 6,
         ]);
     }
 }

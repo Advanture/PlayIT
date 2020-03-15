@@ -64,7 +64,7 @@ class VkAuthController extends Controller
         return response()->json([
             'token' => $token,
             'user' => $authUser,
-        ], 201);
+        ], 200);
     }
 
     public function handleProviderCallbackAdmin(VkAuthService $vkAuthService)
@@ -94,7 +94,7 @@ class VkAuthController extends Controller
 
         return response()->json([
             'message' => 'Успешный выход!'
-        ], 201);
+        ], 200);
     }
 
 }

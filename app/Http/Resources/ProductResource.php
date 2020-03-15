@@ -20,7 +20,7 @@ class ProductResource extends JsonResource
             'name' => $this->name,
             'in_stock' => $this->in_stock,
             'img_url' => $this->img_url,
-            'required_rank' => $this->when(auth()->user()->rank->id < $this->rank->id, ['rank' => $this->rank->id, 'name' => $this->rank->name], null),
+            'required_rank' => $this->when(auth()->user()->rank->id < $this->rank->id, ['rank' => $this->rank->id, 'name' => $this->rank->name,'xp' => $this->rank->required_coins], 0),
         ];
     }
 }
