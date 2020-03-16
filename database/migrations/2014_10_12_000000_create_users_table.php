@@ -28,12 +28,10 @@ class CreateUsersTable extends Migration
             $table->string('app_token', 8)
                 ->unique();
             $table->timestamps();
-            $table->tinyInteger('body')->default(0);
-            $table->tinyInteger('shirt')->default(0);
-            $table->tinyInteger('pants')->default(0);
-            $table->tinyInteger('hair')->default(0);
-            $table->tinyInteger('eyes')->default(0);
-            $table->tinyInteger('hat')->default(0);
+            $table->tinyInteger('body')->default(1);
+            $table->tinyInteger('glasses')->default(1);
+            $table->tinyInteger('top')->default(1);
+            $table->tinyInteger('bottom')->default(1);
             $table->boolean('corona')->default(false);
         });
     }

@@ -25,11 +25,9 @@ class CharacterRequest extends FormRequest
     {
         return [
             'body' => 'required|numeric',
-            'shirt' => 'required|numeric',
-            'pants' => 'required|numeric',
-            'hair' => 'required|numeric',
-            'eyes' => 'required|numeric',
-            'hat' => 'required|numeric',
+            'glasses' => 'required|numeric',
+            'top' => 'required|numeric',
+            'bottom' => 'required|numeric',
         ];
     }
 }

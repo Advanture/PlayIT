@@ -58,7 +58,7 @@ class ProfileController extends Controller
         $rating = $userService->getRatingStats($user);
         if($user->corona = true){
             auth()->user()->corona = true;
-            auth()->user()->shirt = 2;
+            auth()->user()->top = 2;
             auth()->user()->save();
         }
 
@@ -72,15 +72,13 @@ class ProfileController extends Controller
     {
         $authUser = auth()->user();
 
-        if( $authUser->corona != true && $request->shirt == 2 ) return response()->json(['message' => 'Ошибка!'], 400);
+        if( $authUser->corona != true && $request->top == 2 ) return response()->json(['message' => 'Ошибка!'], 400);
 
         $authUser->update([
             'body' => $request->body,
-            'shirt' => $request->shirt,
-            'pants' => $request->pants,
-            'hair' => $request->hair,
-            'eyes' => $request->eyes,
-            'hat' => $request->hat,
+            'glasses' => $request->glasses,
+            'top' => $request->top,
+            'bottom' => $request->bottom,
         ]);
 
         return response()->json(['message' => 'Успешное создание внешности!'], 201);
