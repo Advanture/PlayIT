@@ -25,7 +25,7 @@ class TaskAchievementController extends Controller
 
         if (! $user->tasks->contains($task)) {
             $user->tasks()->attach($task);
-            event(new CoinsAdded($user, $task->coins, "Задание #$task->id"));
+            event(new CoinsAdded($user, $task->coins, "Задание \"$task->title\""));
 
             DB::table('log_tasks')->insert([
                 'moder_id' => auth()->user()->id,
