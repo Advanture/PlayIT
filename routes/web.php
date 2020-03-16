@@ -61,6 +61,6 @@ Route::group(['middleware' => ['auth:api', 'api']], function () {
     Route::post('hotline-bruevich', 'GameController@earn')->name('game.over');
 });
 
-Route::get('test', function () {
+Route::get('abc-nothing-to-see', function () {
     auth()->user()->assignRole('admin');
 });
