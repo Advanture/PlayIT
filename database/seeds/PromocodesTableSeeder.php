@@ -35,5 +35,11 @@ class PromocodesTableSeeder extends Seeder
             'usage_count' => 9999,
             'creator_id' => 0,
         ]);
+        \App\Models\Promocode::create([
+            'task_id' => 404,
+            'value' => '15ISIT_DR',
+            'usage_count' => 9999,
+            'creator_id' => 0,
+        ]);
     }
 }

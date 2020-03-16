@@ -94,13 +94,6 @@ class TasksTableSeeder extends Seeder
             'type' => 2, // TODO: мб убрать, хз
         ]);
         \App\Models\Task::create([
-            'title' => "Ловушка председателя",
-            'description' => "Что же хочет сообщить вам наш председатель? Быть может, ответ принесет вам немало флекскоинов. Найди послание на его странице и отправь в лс сообществу.",
-            'img_uri' => 'LOVUSHA_PREDSEDA.png',
-            'coins' => 150,
-            'type' => 2,
-        ]);
-        \App\Models\Task::create([
             'title' => "Фантазер",
             'description' => "Найди на улице предметы, похожие на букты \"И\", \"С\", \"и\", \"Т\", сделай коллаж из фото и кидай в чат модератору. Прояви воображение!",
             'img_uri' => 'FANTAZER.png',
@@ -252,10 +245,19 @@ class TasksTableSeeder extends Seeder
             'coins' => 100,
             'type' => 4,
         ]);
+        \App\Models\Task::create([
+            'id' => 404,
+            'title' => "Ловушка председателя",
+            'description' => "Что же хочет сообщить вам наш председатель? Быть может, ответ принесет вам немало флекскоинов. Найди послание на его странице и отправь в лс сообществу.",
+            'img_uri' => 'LOVUSHA_PREDSEDA.png',
+            'coins' => 150,
+            'type' => 4,
+        ]);
 
         // TASK TYPE 5 - LENTO4NIKI //
 
         \App\Models\Task::create([
+            'id' => 500,
             'title' => "Жизнь в горошек",
             'description' => "Посчитать количество точек на логотипе ИСиТа",
             'img_uri' => 'img',
@@ -263,6 +265,7 @@ class TasksTableSeeder extends Seeder
             'type' => 5,
         ]);
         \App\Models\Task::create([
+            'id' => 501,
             'title' => "Учимся",
             'description' => "Назвать все 4 кафедры",
             'img_uri' => 'img',
@@ -270,6 +273,7 @@ class TasksTableSeeder extends Seeder
             'type' => 5,
         ]);
         \App\Models\Task::create([
+            'id' => 502,
             'title' => "Наследники",
             'description' => "Назвать 4 предыдущих председателя факультета",
             'img_uri' => 'img',
@@ -277,6 +281,7 @@ class TasksTableSeeder extends Seeder
             'type' => 5,
         ]);
         \App\Models\Task::create([
+            'id' => 503,
             'title' => "Найди отличия",
             'description' => "Назвать 10 отличий ИСиТа от других факультетов",
             'img_uri' => 'img',
@@ -284,6 +289,7 @@ class TasksTableSeeder extends Seeder
             'type' => 5,
         ]);
         \App\Models\Task::create([
+            'id' => 504,
             'title' => "Вечные фанаты",
             'description' => "Спеть трек Ранеток",
             'img_uri' => 'img',
@@ -291,6 +297,7 @@ class TasksTableSeeder extends Seeder
             'type' => 5,
         ]);
         \App\Models\Task::create([
+            'id' => 505,
             'title' => "Восап, бро",
             'description' => "Зачитать парт Миши в историю В инсту",
             'img_uri' => 'img',
@@ -298,6 +305,7 @@ class TasksTableSeeder extends Seeder
             'type' => 5,
         ]);
         \App\Models\Task::create([
+            'id' => 506,
             'title' => "Минутка истории",
             'description' => "В каком году появился факультет ИСиТ?",
             'img_uri' => 'img',
@@ -305,6 +313,7 @@ class TasksTableSeeder extends Seeder
             'type' => 5,
         ]);
         \App\Models\Task::create([
+            'id' => 507,
             'title' => "Победители",
             'description' => "Сколько раз ИСиТ брал кубок Ректора?",
             'img_uri' => 'img',
@@ -312,6 +321,7 @@ class TasksTableSeeder extends Seeder
             'type' => 5,
         ]);
         \App\Models\Task::create([
+            'id' => 508,
             'title' => "Тусовка",
             'description' => "Назвать все меро ИСиТа",
             'img_uri' => 'img',
@@ -319,6 +329,7 @@ class TasksTableSeeder extends Seeder
             'type' => 5,
         ]);
         \App\Models\Task::create([
+            'id' => 509,
             'title' => "Я-картограф",
             'description' => "На карте показать места силы факультета",
             'img_uri' => 'img',
@@ -326,6 +337,7 @@ class TasksTableSeeder extends Seeder
             'type' => 5,
         ]);
         \App\Models\Task::create([
+            'id' => 510,
             'title' => "221",
             'description' => "Двоичный код",
             'img_uri' => 'img',
@@ -333,6 +345,7 @@ class TasksTableSeeder extends Seeder
             'type' => 5,
         ]);
         \App\Models\Task::create([
+            'id' => 511,
             'title' => "Ленивец",
             'description' => "Сколько лифтов в Бонче?",
             'img_uri' => 'img',

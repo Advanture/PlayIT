@@ -20,7 +20,7 @@ class GameService
         if ($task) {
             if (! $user->tasks->contains($task)) {
                 $user->tasks()->attach($task);
-                event(new CoinsAdded($user, $task->coins));
+                event(new CoinsAdded($user, $task->coins, $task->title));
             }
         }
 

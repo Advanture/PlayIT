@@ -32,7 +32,7 @@ class TestBotController extends Controller
 
         if (! $user->tasks->contains($task)) {
             $user->tasks()->attach($task);
-            event(new CoinsAdded($user, $task->coins * $request->success, "Выполнение задания \"$task->title\""));
+            event(new CoinsAdded($user, $task->coins * $request->success, $task->title));
         }
 
         return response()->json();
@@ -78,7 +78,7 @@ class TestBotController extends Controller
 
         if (! $user->tasks->contains($task)) {
             $user->tasks()->attach($task);
-            event(new CoinsAdded($user, $task->coins, "Выполнение задания \"$task->title\""));
+            event(new CoinsAdded($user, $task->coins, $task->title));
         }
 
         return response()->json();
