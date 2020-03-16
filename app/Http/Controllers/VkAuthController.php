@@ -51,10 +51,10 @@ class VkAuthController extends Controller
             $user = Socialite::driver('vkontakte')->stateless()->user();
             //return response()->json($user);
         } catch (InvalidStateException $e) {  // If returned data is invalid
-            return response()->json('a');//redirect(env('FRONTEND_URL'));
+            return redirect(env('FRONTEND_URL'));
         }
         catch (ClientException $e) { // If access denied
-            return response()->json('b');//redirect(env('FRONTEND_URL'));
+            return redirect(env('FRONTEND_URL'));
         }
 
         $authUser = $vkAuthService->authFromVK($user->user);
@@ -73,10 +73,10 @@ class VkAuthController extends Controller
             \Illuminate\Support\Facades\Config::set('services.vkontakte.redirect', 'http://134.122.71.181/auth/vk/callback-a');
             $user = Socialite::driver('vkontakte')->stateless()->user();
         } catch (InvalidStateException $e) {  // If returned data is invalid
-            return response()->json('a');//redirect(env('FRONTEND_URL'));
+            return redirect(env('FRONTEND_URL'));
         }
         catch (ClientException $e) { // If access denied
-            return response()->json('b');//redirect(env('FRONTEND_URL'));
+            return redirect(env('FRONTEND_URL'));
         }
 
         $authUser = $vkAuthService->authFromVK($user->user);

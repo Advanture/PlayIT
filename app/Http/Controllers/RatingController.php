@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\RatingUserResource;
 use App\Models\User;
 use App\Models\UserBalance;
 use App\Services\UserService;
@@ -34,7 +35,7 @@ class RatingController extends Controller
         if ($this->isGame())
             $balances = $balances->appends(['type' => 'game']);
 
-        return response()->json($balances->get());
+        return response()->json(RatingUserResource::collection($balances->get()));
     }
 
     /**

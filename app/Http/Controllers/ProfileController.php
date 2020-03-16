@@ -57,6 +57,7 @@ class ProfileController extends Controller
         $rating = $userService->getRatingStats($user);
         if($user->corona = true){
             auth()->user()->corona = true;
+            auth()->user()->shirt = 2;
             auth()->user()->save();
         }
 
@@ -70,7 +71,7 @@ class ProfileController extends Controller
     {
         $authUser = auth()->user();
 
-        if( $authUser->corona != true && $request->shirt == 4 ) return response()->json(['message' => 'Ошибка!'], 400);
+        if( $authUser->corona != true && $request->shirt == 2 ) return response()->json(['message' => 'Ошибка!'], 400);
 
         $authUser->update([
             'body' => $request->body,

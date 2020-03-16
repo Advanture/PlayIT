@@ -25,7 +25,7 @@ class FortuneController extends Controller
             $fortuneTime = $fortuneService->getLeftTime(auth()->user());
         }
 
-        $fortuneTime = Carbon::parse($fortuneTime)->format('H.i.s');
+        //$fortuneTime = Carbon::parse($fortuneTime)->format('H.i.s');
 
         return response()->json([
             'time' => $fortuneTime

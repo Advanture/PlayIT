@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
             TasksTableSeeder::class,
             //UsersTableSeeder::class,
             //TaskUserTableSeeder::class,
-            //PromocodesTableSeeder::class,
+            PromocodesTableSeeder::class,
             RankTableSeeder::class,
             //UserBalanceTableSeeder::class,
             //ReferralTableSeeder::class,

@@ -40,10 +40,9 @@ class TasksTableSeeder extends Seeder
         \App\Models\Task::create([
             'title' => "Любитель Figma",
             'description' => "Продемонстрируй свой скилл работы в Figma. Создай свой компонент с логотипом IT. 200 флекскоинов не заставят тебя ждать!",
-            'img_uri' => 'default_task.png',
+            'img_uri' => 'LUBITEL_FIGMA.png',
             'coins' => 200,
             'type' => 2,
-            //TODO: DAY 2
         ]);
         \App\Models\Task::create([
             'title' => "Громче!",
@@ -55,7 +54,7 @@ class TasksTableSeeder extends Seeder
         \App\Models\Task::create([
             'title' => "Гордон Рамзи",
             'description' => "Будь как Гордон Джеймс Рамзи! Создай оригинальное фиолетовое блюдо и отправь в сообщения сообществу фото и рецепт. Порази всех вокруг!",
-            'img_uri' => 'default_task.png',
+            'img_uri' => 'GORDON.png',
             'coins' => 150,
             'type' => 2,
         ]);
@@ -76,7 +75,7 @@ class TasksTableSeeder extends Seeder
         \App\Models\Task::create([
             'title' => "Гордость семьи",
             'description' => "Отправь нам фотографию ведомости с только что закрытой задолженностью или пришли скриншот личного кабинета, на котором видно, что утебя их нет, за 100 флекскоинов. Будь гордостью для каждого из нас!",
-            'img_uri' => 'default_task.png',
+            'img_uri' => 'GORDOST_SEMYI.png',
             'coins' => 100,
             'type' => 2,
         ]);
@@ -97,14 +96,14 @@ class TasksTableSeeder extends Seeder
         \App\Models\Task::create([
             'title' => "Ловушка председателя",
             'description' => "Что же хочет сообщить вам наш председатель? Быть может, ответ принесет вам немало флекскоинов. Найди послание на его странице и отправь в лс сообществу.",
-            'img_uri' => 'default_task.png',
+            'img_uri' => 'LOVUSHA_PREDSEDA.png',
             'coins' => 150,
             'type' => 2,
         ]);
         \App\Models\Task::create([
             'title' => "Фантазер",
             'description' => "Найди на улице предметы, похожие на букты \"И\", \"С\", \"и\", \"Т\", сделай коллаж из фото и кидай в чат модератору. Прояви воображение!",
-            'img_uri' => 'default_task.png',
+            'img_uri' => 'FANTAZER.png',
             'coins' => 100,
             'type' => 2,
         ]);
@@ -139,7 +138,7 @@ class TasksTableSeeder extends Seeder
         \App\Models\Task::create([
             'title' => "ИУС: Вечные правки",
             'description' => "Отформатируй и пришли нам предложенный текст (https://dropmefiles.com/Lt0vG) по ГОСТам за 150 флекскоинов. Уверены, ты справишься даже с закрытыми глазами!",
-            'img_uri' => env('FRONTEND_URL'),
+            'img_uri' => 'IUS.png',
             'coins' => 150,
             'type' => 2,
         ]);
@@ -174,7 +173,7 @@ class TasksTableSeeder extends Seeder
         \App\Models\Task::create([
             'title' => "Внеш.ком: Я пришел договориться",
             'description' => "Найди в университете председателя Студенческого совета Александра Борисова и уговори его на проведение квартирника от ф-та ИСиТ. Не забудь запечатлеть момент согласия на камеру и прислать его нам. Порази его своей настойчивостью!",
-            'img_uri' => 'default_task.png',//TODO
+            'img_uri' => 'YA_PRISHEL.png',//TODO
             'coins' => 150,
             'type' => 2,
         ]);
@@ -219,33 +218,37 @@ class TasksTableSeeder extends Seeder
             'type' => 3,
         ]);
 
-        // TASK TYPE 4 - CODE // TODO: ADD IDS
+        // TASK TYPE 4 - CODE //
 
         \App\Models\Task::create([
+            'id' => 400,
             'title' => "Красный, синий, зеленый!",
             'description' => "Разгадай наш таинственный шифр \"https://dropmefiles.com/2VHxL\" и напиши ответ в поле ниже за 100 флекскоинов. Удачи!",
-            'img_uri' => 'default_task.png',//todo
+            'img_uri' => 'RGB.png',
             'coins' => 100,
             'type' => 4,
         ]);
         \App\Models\Task::create([
+            'id' => 401,
             'title' => "Ищейка",
-            'description' => "Найди в картинке(ссылка) код и введи его за 100 флекскоинов!", //TODO: URL
+            'description' => "Найди в картинке(https://dropmefiles.com/096S7) код и введи его за 100 флекскоинов!", //TODO: URL
             'img_uri' => 'isheika.png',
             'coins' => 100,
             'type' => 4,
         ]);
         \App\Models\Task::create([
+            'id' => 402,
             'title' => "Сундук с сокровищами",
             'description' => "Найди таинственный код, спрятанный рядом с деканатом нашего факультета, введи его и получи 70 флекскоинов!",
-            'img_uri' => 'default_task.png',//todo
+            'img_uri' => 'SUNDUK.png',//todo
             'coins' => 100,
             'type' => 4,
         ]);
         \App\Models\Task::create([
+            'id' => 403,
             'title' => "БИС: Безопасность превыше всего",
             'description' => "Разгадай шифр, спрятанный в промо-ролике мероприятия и получи за это 200 флекскоинов!",
-            'img_uri' => 'default_task.png',
+            'img_uri' => 'BIS.png',
             'coins' => 100,
             'type' => 4,
         ]);
@@ -343,7 +346,7 @@ class TasksTableSeeder extends Seeder
             'id' => 600,
             'title' => "Exit the Bonch, pt1",
             'description' => "Сыграй в Exit The Bonch, преодолей планку в 500 очков и получи в награду 300 флекскоинов!",
-            'img_uri' => 'default_task.png',
+            'img_uri' => 'Exit_the_Bonch_pt1.png',
             'coins' => 300,
             'type' => 6,
         ]);
@@ -351,7 +354,7 @@ class TasksTableSeeder extends Seeder
             'id' => 601,
             'title' => "Exit the Bonch, pt2",
             'description' => "Совершенствуй свои навыки в Exit The Bonch. Достигни 1000 очков и получи в награду 400 флекскоинов!",
-            'img_uri' => 'default_task.png',
+            'img_uri' => 'Exit_the_Bonch_pt2.png',
             'coins' => 400,
             'type' => 6,
         ]);
@@ -359,7 +362,7 @@ class TasksTableSeeder extends Seeder
             'id' => 602,
             'title' => "Exit the Bonch, pt2",
             'description' => "Продемонстрируй свой скилл в игре Exit The Bonch. Набери 2000 очков и 500 флекскоинов не заставят себя ждать!",
-            'img_uri' => 'default_task.png',
+            'img_uri' => 'Exit_the_Bonch_pt3.png',
             'coins' => 500,
             'type' => 6,
         ]);
