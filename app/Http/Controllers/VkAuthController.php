@@ -31,7 +31,7 @@ class VkAuthController extends Controller
 
     public function redirectToProviderAdmin()//: RedirectResponse
     {
-        \Illuminate\Support\Facades\Config::set('services.vkontakte.redirect', 'http://134.122.71.181/auth/vk/callback-a');
+        \Illuminate\Support\Facades\Config::set('services.vkontakte.redirect', 'https://134.122.71.181/auth/vk/callback-a');
         return Socialite::with('vkontakte')->stateless()->redirect();
     }
 
@@ -70,7 +70,7 @@ class VkAuthController extends Controller
     public function handleProviderCallbackAdmin(VkAuthService $vkAuthService)
     {
         try {
-            \Illuminate\Support\Facades\Config::set('services.vkontakte.redirect', 'http://134.122.71.181/auth/vk/callback-a');
+            \Illuminate\Support\Facades\Config::set('services.vkontakte.redirect', 'https://134.122.71.181/auth/vk/callback-a');
             $user = Socialite::driver('vkontakte')->stateless()->user();
         } catch (InvalidStateException $e) {  // If returned data is invalid
             return redirect(env('FRONTEND_URL'));
@@ -80,7 +80,7 @@ class VkAuthController extends Controller
         }
 
         $authUser = $vkAuthService->authFromVK($user->user);
-        return redirect('http://134.122.71.181/admin');
+        return redirect('https://134.122.71.181/admin');
     }
 
     /**
