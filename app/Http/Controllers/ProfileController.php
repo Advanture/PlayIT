@@ -63,7 +63,7 @@ class ProfileController extends Controller
         }
 
         return response()->json([
-            'user' => $user->load('balance', 'rank', 'achievements'),
+            'user' => new ProfileResource($user->load('balance', 'rank')),
             'rating' => $rating,
         ]);
     }
