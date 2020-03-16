@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CharacterRequest;
 use App\Http\Requests\PromocodeUseRequest;
+use App\Http\Resources\ProfileResource;
 use App\Models\User;
 use App\Models\UserCoinsHistory;
 use App\Services\PromocodeService;
@@ -24,7 +25,7 @@ class ProfileController extends Controller
         $rating = $userService->getRatingStats(auth()->user());
 
         return response()->json([
-            'user' => auth()->user()->load('achievements'),
+            'user' => new ProfileResource(auth()->user()),
             'rating' => $rating
         ],201);
     }
