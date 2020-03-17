@@ -88,10 +88,10 @@ class TasksTableSeeder extends Seeder
         ]);
         \App\Models\Task::create([
             'title' => "Человек-ИСиТ",
-            'description' => "Разыскивай людей с фиолетовыми лентами и получай от них особенные задания. Чем больше найдешь, тем больше получишь флекскоинов!",
+            'description' => "ИСиТовцы нуждаются в твоей помощи! Разыскивай их в сети и получай особенные задания. Чем больше выполнишь заданий, тем больше получишь флекскоинов! Список всех доступных квестов и их кураторов можно найти на странице \"Человек-ИСиТ\"",
             'img_uri' => 'chel_isit.png',
             'coins' => 50,
-            'type' => 2, // TODO: мб убрать, хз
+            'type' => 2,
         ]);
         \App\Models\Task::create([
             'title' => "Фантазер",
@@ -102,7 +102,7 @@ class TasksTableSeeder extends Seeder
         ]);
         \App\Models\Task::create([
             'title' => "Факультет прикладного флекса",
-            'description' => "Повтори и запиши на видео танец наших победителей (yadi.sk/i/18huhvJmO2nInA), и отправь его нам за 150 флекскоинов Порви танцпол!",
+            'description' => "Повтори и запиши на видео танец наших победителей (yadi.sk/i/18huhvJmO2nInA), и отправь его нам за 150 флекскоинов. Порви танцпол!",
             'img_uri' => 'fakultet_flexa.png',
             'coins' => 150,
             'type' => 2,
@@ -130,7 +130,7 @@ class TasksTableSeeder extends Seeder
         ]);
         \App\Models\Task::create([
             'title' => "ИУС: Вечные правки",
-            'description' => "Отформатируй и пришли нам предложенный текст (dropmefiles.com/Lt0vG) по ГОСТам за 150 флекскоинов. Уверены, ты справишься даже с закрытыми глазами!",
+            'description' => "Отформатируй и пришли нам предложенный текст (dropmefiles.com/uNHGM) по ГОСТам за 150 флекскоинов. Уверены, ты справишься даже с закрытыми глазами!",
             'img_uri' => 'IUS.png',
             'coins' => 150,
             'type' => 2,
@@ -158,7 +158,7 @@ class TasksTableSeeder extends Seeder
         ]);
         \App\Models\Task::create([
             'title' => "Bonch.dev: Brunch.Dove",
-            'description' => "Найди имена всех персонажей комикса Brunch.Dove, который выходит в группе Bonch.dev, и распредели их по профессиональной деятельности за 100 флекскоинов!",
+            'description' => "Найди имена всех персонажей комикса Brunch.Dove, который выходит в группе Bonch.dev, и распредели их по профессиональной деятельности за 150 флекскоинов!",
             'img_uri' => 'brunch.dove.png',
             'coins' => 150,
             'type' => 2,
@@ -187,7 +187,7 @@ class TasksTableSeeder extends Seeder
         \App\Models\Task::create([
             'title' => "OR.COM",
             'description' => "Сколько же человек с факультета-именинника было в составе Организационного комитета начиная с 2016 года? Скорей переходи в их группу и постарайся отыскать всех, затем отправляй число в чат модератору и забирай свои 150 флекскоинов! Удачи!",
-            'img_uri' => 'default_task.png',
+            'img_uri' => 'ORCOM.png',
             'coins' => 150,
             'type' => 2,
         ]);
@@ -216,7 +216,7 @@ class TasksTableSeeder extends Seeder
         \App\Models\Task::create([
             'id' => 400,
             'title' => "Красный, синий, зеленый!",
-            'description' => "Разгадай наш таинственный шифр \"dropmefiles.com/2VHxL\" и напиши ответ в поле ниже за 100 флекскоинов. Удачи!",
+            'description' => "Разгадай наш таинственный шифр (dropmefiles.com/2VHxL) и напиши ответ в поле ниже за 100 флекскоинов. Удачи!",
             'img_uri' => 'RGB.png',
             'coins' => 100,
             'type' => 4,
