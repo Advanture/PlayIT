@@ -45,7 +45,7 @@ class TestBotController extends Controller
             try {
                 $user = User::where('vk_id', $id)->firstOrFail();
             } catch (ModelNotFoundException $e) {
-                return response()->json(['error' => 'User or task not found'], 404);
+                return response()->json(['error' => 'User not found'], 404);
             }
 
             event(new CoinsAdded($user, 300, "Участие в Кликере"));

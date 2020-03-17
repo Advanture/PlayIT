@@ -43,7 +43,7 @@ Route::group(['middleware' => ['auth:api', 'api']], function () {
     Route::get('news', 'NewsController@index')->name('news');
 
     Route::get('profile', 'ProfileController@index')->name('profile');
-    Route::put('profile/character-update', 'ProfileController@characterCreate')->name('profile.character.create');
+    Route::put('profile/character-update', 'ProfileController@characterUpdate')->name('profile.character.update');
     Route::get('profile/{user}', 'ProfileController@visit')->name('profile.visit');
 
     Route::get('rating', 'RatingController@index')->name('rating');

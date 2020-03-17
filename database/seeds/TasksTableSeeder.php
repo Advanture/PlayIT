@@ -352,6 +352,38 @@ class TasksTableSeeder extends Seeder
             'coins' => 50,
             'type' => 5,
         ]);
+        \App\Models\Task::create([
+            'id' => 512,
+            'title' => "Правда/ложь",
+            'description' => "Названный факт - правда или ложь?",
+            'img_uri' => 'img',
+            'coins' => 50,
+            'type' => 5,
+        ]);
+        \App\Models\Task::create([
+            'id' => 513,
+            'title' => "Инста-блогер",
+            'description' => "Запилить историю в инсту, агитируя людей учавствовать в золотом лайке",
+            'img_uri' => 'img',
+            'coins' => 50,
+            'type' => 5,
+        ]);
+        \App\Models\Task::create([
+            'id' => 514,
+            'title' => "Сколько?",
+            'description' => "Сколько суммарно лайков на 15 последних постах в группе исита",
+            'img_uri' => 'img',
+            'coins' => 50,
+            'type' => 5,
+        ]);
+        \App\Models\Task::create([
+            'id' => 515,
+            'title' => "Боевой клич!",
+            'description' => "Перечислить все факультеты и их кричалки(ИСиТ-мощь и т.д.)",
+            'img_uri' => 'img',
+            'coins' => 50,
+            'type' => 5,
+        ]);
 
         // TASK TYPE 6 - GAME //
 
