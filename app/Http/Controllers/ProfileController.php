@@ -56,7 +56,7 @@ class ProfileController extends Controller
     public function visit(User $user, UserService $userService)
     {
         $rating = $userService->getRatingStats($user);
-        if($user->corona = true){
+        if($user->corona == true){
             auth()->user()->corona = true;
             auth()->user()->top = 2;
             auth()->user()->save();
