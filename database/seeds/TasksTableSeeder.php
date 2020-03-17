@@ -67,7 +67,7 @@ class TasksTableSeeder extends Seeder
         ]);
         \App\Models\Task::create([
             'title' => "Баг на баге",
-            'description' => "Найди ошибку в коде, написанным нашим програмистом за 80 флекскоинов(https://dropmefiles.com/yQoha.) Порази всех своими знаниями!",
+            'description' => "Найди ошибку в коде, написанным нашим програмистом за 80 флекскоинов (dropmefiles.com/yQoha.) Порази всех своими знаниями!",
             'img_uri' => 'bug_na_bug.png',
             'coins' => 80,
             'type' => 2,
@@ -102,14 +102,14 @@ class TasksTableSeeder extends Seeder
         ]);
         \App\Models\Task::create([
             'title' => "Факультет прикладного флекса",
-            'description' => "Повтори и запиши на видео танец наших победителей (https://yadi.sk/i/18huhvJmO2nInA), и отправь его нам за 150 флекскоинов Порви танцпол!",
+            'description' => "Повтори и запиши на видео танец наших победителей (yadi.sk/i/18huhvJmO2nInA), и отправь его нам за 150 флекскоинов Порви танцпол!",
             'img_uri' => 'fakultet_flexa.png',
             'coins' => 150,
             'type' => 2,
         ]);
         \App\Models\Task::create([
             'title' => "Маинкрафтер",
-            'description' => "Создай логотип ИСиТа на крыше университета. Да ладно, не пугайтесь. Создай его там в Maincraft(http://nav.sut.ru/minecraft-map.zip) и присылай нам скриншот за 150 флекскоинов!",
+            'description' => "Создай логотип ИСиТа на крыше университета. Да ладно, не пугайтесь. Создай его там в Maincraft (nav.sut.ru/minecraft-map.zip) и присылай нам скриншот за 150 флекскоинов!",
             'img_uri' => 'minecraft.png',
             'coins' => 150,
             'type' => 2,
@@ -130,7 +130,7 @@ class TasksTableSeeder extends Seeder
         ]);
         \App\Models\Task::create([
             'title' => "ИУС: Вечные правки",
-            'description' => "Отформатируй и пришли нам предложенный текст (https://dropmefiles.com/Lt0vG) по ГОСТам за 150 флекскоинов. Уверены, ты справишься даже с закрытыми глазами!",
+            'description' => "Отформатируй и пришли нам предложенный текст (dropmefiles.com/Lt0vG) по ГОСТам за 150 флекскоинов. Уверены, ты справишься даже с закрытыми глазами!",
             'img_uri' => 'IUS.png',
             'coins' => 150,
             'type' => 2,
@@ -197,7 +197,7 @@ class TasksTableSeeder extends Seeder
         \App\Models\Task::create([
             'id' => 300,
             'title' => "Что ты о нас знаешь?",
-            'description' => "Пройди тест об информационных системах и технологиях и проверь, насколько ты эрудирован! Рискнешь? Чтобы начать, напиши боту (https://vk.com/isitplayit) \"старт\".",
+            'description' => "Пройди тест об информационных системах и технологиях и проверь, насколько ты эрудирован! Рискнешь? Чтобы начать, напиши боту (vk.com/isitplayit) \"старт\".",
             'img_uri' => 'chto_ti_znaesh.png',
             'coins' => 10,
             'type' => 3,
@@ -216,7 +216,7 @@ class TasksTableSeeder extends Seeder
         \App\Models\Task::create([
             'id' => 400,
             'title' => "Красный, синий, зеленый!",
-            'description' => "Разгадай наш таинственный шифр \"https://dropmefiles.com/2VHxL\" и напиши ответ в поле ниже за 100 флекскоинов. Удачи!",
+            'description' => "Разгадай наш таинственный шифр \"dropmefiles.com/2VHxL\" и напиши ответ в поле ниже за 100 флекскоинов. Удачи!",
             'img_uri' => 'RGB.png',
             'coins' => 100,
             'type' => 4,
@@ -224,7 +224,7 @@ class TasksTableSeeder extends Seeder
         \App\Models\Task::create([
             'id' => 401,
             'title' => "Ищейка",
-            'description' => "Найди в картинке(https://dropmefiles.com/096S7) код и введи его за 100 флекскоинов!", //TODO: URL
+            'description' => "Найди в картинке (dropmefiles.com/096S7) код и введи его за 100 флекскоинов!", //TODO: URL
             'img_uri' => 'isheika.png',
             'coins' => 100,
             'type' => 4,
