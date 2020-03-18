@@ -21,7 +21,7 @@ class ShopController extends Controller
         $products = Product::where('in_stock', '>', 0)
             ->doesntHave('orders')
             ->orWhereHas('orders', function (Builder $query) {
-                $query->where('is_pending', true)->whereNotIn('user_id', [auth()->user()->id]);
+                $query->where('is_pending', true)->WhereNotIn('user_id', [auth()->user()->id]);
             })
             ->get();
 
