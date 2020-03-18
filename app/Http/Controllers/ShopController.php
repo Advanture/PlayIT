@@ -28,6 +28,19 @@ class ShopController extends Controller
         return response()->json(ProductResource::collection($products));
     }
 
+    public function debug(): JsonResponse
+    {
+        $products = Product::where('in_stock', '>', 0)
+            ->doesntHave('orders')
+            ->orWhereHas('orders', function (Builder $query) {
+                $query->where('is_pending', true); //->whereNotIn('user_id', [auth()->user()->id])
+            })
+            //->get();
+            ->toSql();
+
+        return response()->json($products);//json(ProductResource::collection($products));
+    }
+
     /**
      * @param Product $product
      * @param OrderService $orderService

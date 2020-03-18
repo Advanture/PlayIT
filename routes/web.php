@@ -37,6 +37,7 @@ Route::group(['middleware' => ['auth:api', 'api']], function () {
         'as'        => 'shop.'
     ], function () {
         Route::get('/', 'ShopController@index')->name('index');
+        Route::get('/debug', 'ShopController@debug')->name('debug');
         Route::get('buy/{product}', 'ShopController@buy')->name('buy');
     });
 
