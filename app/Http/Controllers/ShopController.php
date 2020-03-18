@@ -21,11 +21,9 @@ class ShopController extends Controller
         $products = Product::where('in_stock', '>', 0)
             ->doesntHave('orders')
             ->orWhereHas('orders', function (Builder $query) {
-                $query->where('is_pending', true)->whereNotIn('user_id', [auth()->user()->id]);
+                $query->where('is_pending', true); //->whereNotIn('user_id', [auth()->user()->id])
             })
             ->get();
-
-        //if(auth()->user()->corona != true) $products->forget(9);
 
         return response()->json(ProductResource::collection($products));
     }
