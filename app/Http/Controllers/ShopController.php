@@ -22,11 +22,11 @@ class ShopController extends Controller
             ->doesntHave('orders')
             ->orWhere('in_stock', '>', 0)
             ->whereHas('orders', function (Builder $query) {
-                $query->where('is_pending', true);//->whereNotIn('user_id', [auth()->user()->id]);//->where('user_id','<>',auth()->user()->id);
+                $query->where('is_pending', true);//->where('user_id','<>', auth()->user()->id);;//->whereNotIn('user_id', [auth()->user()->id]);//->where('user_id','<>',auth()->user()->id);
             })
-            ->get();
+            ->toSql();
 
-        return response()->json(ProductResource::collection($products));
+        return response()->json($products);//ProductResource::collection($products));
     }
 
     /**

@@ -57,8 +57,8 @@ Route::group(['middleware' => ['auth:api', 'api']], function () {
 
     Route::get('history', 'ProfileController@coinsHistory');
 
-    Route::get('hotline-bruevich', 'GameController@index')->name('game');
-    Route::post('hotline-bruevich', 'GameController@earn')->name('game.over');
+    //Route::get('hotline-bruevich', 'GameController@index')->name('game');
+    Route::post('game', 'GameController@earn')->name('game.over');
 });
 
 //Route::get('abc-nothing-to-see', function () {

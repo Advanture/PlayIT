@@ -42,7 +42,7 @@ class FortuneController extends Controller
         if (! $fortuneService->checkTime(auth()->user()))
             return response()->json(['fortune_time' => $fortuneService->getLeftTime(auth()->user())]);
 
-        $randomValue = rand(1, 99);
+        $randomValue = rand(1, 100);
         $canFortune = true;
 
         event(new CoinsAdded(auth()->user(), $randomValue, 'Колесо Фортуны'));

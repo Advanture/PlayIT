@@ -16,7 +16,7 @@ class GameController extends Controller
      */
     public function index(): View
     {
-        return view('game');
+        return response()->json('game');
     }
 
     /**
@@ -28,6 +28,6 @@ class GameController extends Controller
     {
         $gameService->taskComplete(auth()->user(), $request->points);
 
-        return response()->redirectToRoute('game');
+        return response()->json('Успех!', 200);
     }
 }
