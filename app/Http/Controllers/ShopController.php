@@ -20,6 +20,9 @@ class ShopController extends Controller
     {
         $products = Product::where('in_stock', '>', 0)
             ->doesntHave('orders')
+            ->orWhereHas('orders', function (Builder $query) {
+                $query->where('is_pending', true);
+            })
             ->get();
 
         //if(auth()->user()->corona != true) $products->forget(9);
