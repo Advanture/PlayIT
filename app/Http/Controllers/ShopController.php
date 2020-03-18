@@ -42,11 +42,6 @@ class ShopController extends Controller
             return response()->json(['message' => 'Успешная покупка!'], 200);
         }
 
-        $a = auth()->user()->balance->current_coins;
-        $b = $product->price;
-        $c = auth()->user()->rank->id;
-        $d = $product->rank->id;
-
-        return response()->json(['message' => "Ошибка!($a,$b&$c,$d)"], 400);
+        return response()->json(['message' => "Ошибка!"], 400);
     }
 }
