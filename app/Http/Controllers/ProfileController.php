@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CharacterRequest;
 use App\Http\Requests\PromocodeUseRequest;
 use App\Http\Resources\ProfileResource;
+use App\Http\Resources\VisitProfileResource;
 use App\Models\User;
 use App\Models\UserCoinsHistory;
 use App\Services\PromocodeService;
@@ -63,7 +64,7 @@ class ProfileController extends Controller
         }
 
         return response()->json([
-            'user' => new ProfileResource($user->load('balance', 'rank')),
+            'user' => new VisitProfileResource($user->load('balance', 'rank', 'achievements')),
             'rating' => $rating,
         ]);
     }

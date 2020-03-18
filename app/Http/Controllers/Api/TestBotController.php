@@ -84,7 +84,7 @@ class TestBotController extends Controller
         return response()->json();
     }
 
-    public function promocode(PromocodeUseRequest $request, PromocodeService $promocodeService): JsonResponse
+    public function promocode(PromocodeUseRequest $request, PromocodeService $promocodeService, AchievementService $achievementService): JsonResponse
     {
         $code = $request->code;
 
