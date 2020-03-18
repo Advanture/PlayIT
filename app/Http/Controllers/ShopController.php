@@ -36,7 +36,7 @@ class ShopController extends Controller
      */
     public function buy(Product $product, OrderService $orderService): JsonResponse
     {
-        if (auth()->user()->balance->current_coins >= $product->price && auth()->user()->rank->id > $product->rank->id){
+        if (auth()->user()->balance->current_coins >= $product->price && auth()->user()->rank->id >= $product->rank->id){
             $orderService->make(auth()->user(), $product);
 
             return response()->json(['message' => 'Успешная покупка!'], 200);
