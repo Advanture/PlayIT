@@ -20,25 +20,13 @@ class ShopController extends Controller
     {
         $products = Product::where('in_stock', '>', 0)
             ->doesntHave('orders')
-            ->orWhereHas('orders', function (Builder $query) {
-                $query->where('is_pending', true); //->whereNotIn('user_id', [auth()->user()->id])
+            ->orWhere('in_stock', '>', 0)
+            ->whereHas('orders', function (Builder $query) {
+                $query->where('is_pending', true);//->whereNotIn('user_id', [auth()->user()->id]);//->where('user_id','<>',auth()->user()->id);
             })
             ->get();
 
         return response()->json(ProductResource::collection($products));
-    }
-
-    public function debug(): JsonResponse
-    {
-        $products = Product::where('in_stock', '>', 0)
-            ->doesntHave('orders')
-            ->orWhereHas('orders', function (Builder $query) {
-                $query->where('is_pending', true); //->whereNotIn('user_id', [auth()->user()->id])
-            })
-            //->get();
-            ->toSql();
-
-        return response()->json($products);//json(ProductResource::collection($products));
     }
 
     /**
@@ -54,6 +42,11 @@ class ShopController extends Controller
             return response()->json(['message' => 'Успешная покупка!'], 200);
         }
 
-        return response()->json(['message' => 'Ошибка!'], 400);
+        $a = auth()->user()->balance->current_coins;
+        $b = $product->price;
+        $c = auth()->user()->rank->id;
+        $d = $product->rank->id;
+
+        return response()->json(['message' => "Ошибка!($a,$b&$c,$d)"], 400);
     }
 }
