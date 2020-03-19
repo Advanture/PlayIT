@@ -76,11 +76,11 @@ class AchievementService
 
     public function getAllARTasksAchievement(Authenticatable $user)
     {
-        $ARTasksCount = Task::where('type', 1)->count();
-        $completedTasksCount = $user->tasks->where('type', 1)->count();
+        $ARTask = Task::find(1);
+        $clickerAchievement = Achievement::find(5);
         $achievement = Achievement::find(6);
 
-        if($completedTasksCount == $ARTasksCount) {
+        if($user->achievements->contains($clickerAchievement) && $user->tasks->contains($ARTask)){
             if(! $user->achievements->contains($achievement)){
                 $user->achievements()->attach($achievement);
                 return $achievement;

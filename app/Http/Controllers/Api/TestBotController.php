@@ -51,6 +51,7 @@ class TestBotController extends Controller
 
             event(new CoinsAdded($user, 300, "Участие в Кликере"));
             $achievementService->getClickerAchievement($user);
+            $achievementService->getAllARTasksAchievement($user);
         }
 
         return response()->json(['message' => 'OK'],200);
@@ -68,7 +69,7 @@ class TestBotController extends Controller
         return response()->json($user->vk_id);
     }
 
-    public function completeTask(CompleteTaskRequest $request): JsonResponse
+    public function completeTask(CompleteTaskRequest $request, AchievementService $achievementService): JsonResponse
     {
         try {
             $user = User::where('vk_id', $request->vk_id)->firstOrFail();
@@ -81,6 +82,8 @@ class TestBotController extends Controller
             $user->tasks()->attach($task);
             event(new CoinsAdded($user, $task->coins, $task->title));
         }
+
+        $achievementService->getAllARTasksAchievement($user);
 
         return response()->json();
     }
