@@ -28,7 +28,7 @@ class CompleteTaskRequest extends FormRequest
     {
         return [
             'vk_id' => 'required',
-            'task' => 'required|in:1,2'
+            'task' => 'required|in:1,2',
         ];
     }
 }

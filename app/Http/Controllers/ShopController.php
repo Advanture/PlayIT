@@ -24,9 +24,9 @@ class ShopController extends Controller
             ->whereHas('orders', function (Builder $query) {
                 $query->where('is_pending', true);//->where('user_id','<>', auth()->user()->id);;//->whereNotIn('user_id', [auth()->user()->id]);//->where('user_id','<>',auth()->user()->id);
             })
-            ->toSql();
+            ->get();
 
-        return response()->json($products);//ProductResource::collection($products));
+        return response()->json(ProductResource::collection($products));
     }
 
     /**

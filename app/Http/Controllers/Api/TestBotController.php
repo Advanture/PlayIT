@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Events\CoinsAdded;
 use App\Http\Requests\CompleteTaskRequest;
 use App\Http\Requests\PromocodeUseRequest;
+use App\Http\Requests\TestBotClickerRequest;
 use App\Http\Requests\TestBotRequest;
 use App\Models\Task;
 use App\Models\User;
@@ -38,21 +39,21 @@ class TestBotController extends Controller
         return response()->json();
     }
 
-    public function userWinsClicker(Request $request, AchievementService $achievementService): JsonResponse
+    public function userWinsClicker(TestBotClickerRequest $request, AchievementService $achievementService): JsonResponse
     {
-        $ids = $request['ids'];
+        $ids = $request['vk_ids'];
         foreach ($ids as $id){
             try {
                 $user = User::where('vk_id', $id)->firstOrFail();
             } catch (ModelNotFoundException $e) {
-                return response()->json(['error' => 'User not found'], 404);
+                return response()->json(['message' => 'Ошибка!'], 400);
             }
 
             event(new CoinsAdded($user, 300, "Участие в Кликере"));
             $achievementService->getClickerAchievement($user);
         }
 
-        return response()->json();
+        return response()->json(['message' => 'OK'],200);
     }
 
     public function getIdByAppToken(Request $request): JsonResponse

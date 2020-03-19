@@ -15,7 +15,7 @@ class TestBotClickerRequest extends FormRequest
     {
         return (
             $this->request->has('_key') &&
-            $this->request->get('_key') === config('services.testbot_private_key')
+            $this->request->get('_key') === config('services.ar_private_key')
         );
     }
 
